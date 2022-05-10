@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+    <head>
+        <title> My Little Phony </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
+        <link href="http://fonts.cdnfonts.com/css/simple-brush-script" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <style>
+            html {
+                background: url(background.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            @font-face {
+                font-family: 'scriptinaregular';
+                src: url('scriptin-webfont.woff2') format('woff2'),
+                url('scriptin-webfont.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body {
+                margin-top: 2%;
+                margin-left: 5%;
+                background: none;
+            }
+            .title h1 {
+                font-size: 4vw;
+                font-family: 'scriptinaregular';
+                margin-bottom: 8vh;
+            }
+            .Lists {
+                display: inline-block;
+                width: 22.4%;
+                vertical-align: top;
+                margin-top: 0.3%;
+            }
+            .Details {
+                display: inline-block;
+                width: 60%;
+                margin-left: 10vw;
+                background-color: rgba(225, 20, 147, 0.3);
+                padding: 5%;
+                color: white;
+            }
+            .Details input:focus {
+                border: 1px solid #FF69B4; 
+                outline: none !important;
+            }
+            .searchform {
+                overflow: hidden;
+                min-width: 100%;
+            }
+            .searchbar {
+                margin-bottom: 10%;
+                overflow: hidden;
+                width: 100%;
+            }
+            .searchbar input {
+                width: 16vw;
+                margin: 0px;
+                font-size: 1vw;
+                border: 0.1vw solid #FF69B4; 
+                display: inline-block;
+                float: none;
+            }
+            .searchbar input:focus {
+                border: 1px solid #FF69B4; 
+                outline: none !important;
+            }
+            .searchbar button {
+                display: inline-block;
+                font-size: 1vw;
+                max-width: 4vw;
+                min-width: 4vw;
+                margin: 0px;
+                border: 0.1vw solid #FF69B4; 
+                text-align: center;
+                float: none;
+            }
+            #list button {
+                display: block;
+                width: 19vw;
+                text-align: left;
+                padding: 0px 10px;
+                font-size: 1vw;
+                background-color: #F535AA;
+                border: 1px solid #DC143C;
+                margin-bottom: 1%;
+                border-radius: 40px;
+                transition-duration: 0.2s;
+            }
+            #list button:hover {
+                background-color: #F660AB;
+                border: 1px solid #FF69B4;
+                color: white;
+            }
+            #list button:active {
+                background-color: #F660AB;
+                border: 1px solid #FF69B4;
+                color: white; 
+            }
+            #list button:focus {
+                background-color: #F660AB;
+                border: 1px solid #FF69B4;
+                color: white; 
+            }
+            .NameLabel {
+                font-size: 1vw;
+            }
+            #FriendName {
+                width: 100%;
+                border: 1px solid black;
+                font-size: 24px;
+                height: 36px;
+            }
+            #Email, #Number {
+                display: inline-block;
+                width: 49%;
+            }
+            #FriendEmail {
+                width: 80%;
+                border: 1px solid black;
+                font-size: 24px;
+                height: 36px;
+            }
+            #FriendNumber {
+                width: 80%;
+                border: 1px solid black;
+                font-size: 24px;
+                height: 36px;
+            }
+            #FriendAddress {
+                width: 100%;
+                border: 1px solid black;
+                font-size: 24px;
+                height: 36px;
+            }
+            .Details h4 {
+                display: inline-block;
+                margin-bottom: 3%;
+            }
+            .AddDetailButton {
+                display: inline-block;
+                float: right;
+                margin-bottom: 5%;
+                background-color: #F660AB;
+                border: 1px solid #FF69B4;
+                border-radius: 20px;
+                font-size: 1vw;
+            }
+            #PonyLogo {
+                width: 4vw;
+            }
+            .detail {
+                font-size: 3vw;
+                font-family: impact;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="title">
+            <h1> My Little Phony <img id="PonyLogo" src="logo.png" alt="PonyLogo"></h1>
+        </div>
+        
+        <section class="Lists">
+            <h4> &nbsp; </h4>
+            <div class="searchbar">
+                <form class="searchform" action="/action_page.php">
+                    <input type="text" placeholder="Search..." name="search" id="SearchValue">
+                    <button type="button" id="Search" onclick="SearchFunc()"> Search </button>
+                </form>
+            </div>
+            
+            <div id="list">
+                <button id="Addition" onclick="AddList()"> + Add A New Friend </button>
+            </div>
+        </section>
+        
+        <section class="Details">
+            <h4 class="detail"> Details </h4>
+            <button class="AddDetailButton" onclick="AddNew()"> Add </button>
+            <form id="Name" action="/action_page.php">  
+                <label class="NameLabel"> Friend's Name </label>
+                <input id="FriendName">
+            </form>
+            <form id="Email" action="/action_page.php">  
+                <label class="NameLabel"> Email Address </label>
+                <input id="FriendEmail">
+            </form>
+            <form id="Number" action="/action_page.php">  
+                <label class="NameLabel"> Phone Number </label>
+                <input id="FriendNumber">
+            </form>
+            <form id="Address" action="/action_page.php">  
+                <label class="NameLabel"> Address </label>
+                <input id="FriendAddress">
+            </form>
+        </section>
+        <script>
+            
+            var ponyname = [];
+            var ponyemail = [];
+            var ponynumber = [];
+            var ponyaddress = [];
+            var numberfriend = [];
+            var placeholder = 0;
+            
+            function SearchFunc() {
+                var searchvalue = document.getElementById("SearchValue").value;
+                for (var x=0; x<ponyname.length; x++) {
+                    if (searchvalue == ponyname[x]) {
+                        document.getElementById("FriendName").value = ponyname[x];
+                        document.getElementById("FriendEmail").value = ponyemail[x];
+                        document.getElementById("FriendNumber").value = ponynumber[x];
+                        document.getElementById("FriendAddress").value = ponyaddress[x];
+                        return;
+                    }
+                }
+            }
+            
+            function reply_click(clicked_id) {
+                var n = clicked_id;
+                document.getElementById("FriendName").value = ponyname[n];
+                document.getElementById("FriendEmail").value = ponyemail[n];
+                document.getElementById("FriendNumber").value = ponynumber[n];
+                document.getElementById("FriendAddress").value = ponyaddress[n];
+                if ( n == "Addition" ) {
+                    document.getElementById("FriendName").value = "";
+                    document.getElementById("FriendEmail").value = "";
+                    document.getElementById("FriendNumber").value = "";
+                    document.getElementById("FriendAddress").value = "";
+                }
+            }
+            
+            function AddNew() {
+                var namevalue = document.getElementById("FriendName").value;
+                var emailvalue = document.getElementById("FriendEmail").value;
+                var numbervalue = document.getElementById("FriendNumber").value;
+                var addressvalue = document.getElementById("FriendAddress").value;
+                if (namevalue === "" || emailvalue === "" || numbervalue === "" || addressvalue === "" ) {
+                    alert("Error! Invalid Input!");
+                    return;
+                }
+                ponyname.push(namevalue);
+                ponyemail.push(emailvalue);
+                ponynumber.push(numbervalue);
+                ponyaddress.push(addressvalue);
+                numberfriend.push(placeholder);
+                var defbut = document.getElementById("Addition");
+                var changetxt = document.getElementById("FriendName").value;
+                document.getElementById("Addition").innerHTML = changetxt;
+                document.getElementById("Addition").setAttribute("onclick", "reply_click(this.id)");
+                document.getElementById("Addition").setAttribute("id", placeholder);
+                placeholder = placeholder + 1;
+                var obj = document.createElement("BUTTON");
+                var objtxt = document.createTextNode("+ Add A New Friend");
+                obj.appendChild(objtxt);
+                document.getElementById("list").appendChild(obj);
+                obj.setAttribute("id", "Addition");
+                obj.setAttribute("onclick", "reply_click(this.id)");
+                document.getElementById("FriendName").value = "";
+                document.getElementById("FriendEmail").value = "";
+                document.getElementById("FriendNumber").value = "";
+                document.getElementById("FriendAddress").value = "";
+            }
+        </script>
+    </body>
+    
+</html>
